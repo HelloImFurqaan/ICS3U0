@@ -57,6 +57,7 @@ def perimeter(N):
 
 # Welcome message for the user
 print("Welcome to the school yearbook program!")
+print("Input 'done' to exit program.")
 
 done = False  # Initialize done as False
 
@@ -68,15 +69,15 @@ while done != True:
     # Check if the user is done
     if photos.lower() == "done":
         print("Goodbye!")  # Print a farewell message
-        done = True  # Set done to True
-        break  # Exit the loop
+        done = True  # Set done to True and exit the loop
+    else:  
     
-    try:
-        photos = int(photos)  # Attempt to convert the input to an integer
-        if photos <= 0:  # Check if the input is a valid positive integer
-            print("%d is not a valid number of photos. Please enter a positive number." % photos)
-        else:
-            print(perimeter(photos))  # Calculate and display the perimeter
-    except:
-        # Handle invalid inputs that cannot be converted to an integer
-        print("Please enter a positive number.")        
+        try:
+            photos = int(photos)  # Attempt to convert the input to an integer
+            if photos <= 0:  # Check if the input is a valid positive integer
+                print("%d is not a valid number of photos. Please enter a positive number." % photos)
+            else:
+                print(perimeter(photos))  # Calculate and display the perimeter
+        except:
+            # Handle invalid inputs that cannot be converted to an integer
+            print("Please enter a positive number.")        
